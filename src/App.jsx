@@ -36,6 +36,11 @@ function App() {
     }
   };
 
+  const handleOnChangePrompt = (e) => {
+    console.log(e.target.value)
+    setPrompt(e.target.value)
+  }
+
   // III) JSX
   return (
     <div className="container mt-5 d-flex justify-content-center">
@@ -44,7 +49,8 @@ function App() {
         <textarea
           className="mb-3 mx-2 px-2"
           placeholder={placeholder}
-          onChange={(e) => setPrompt(e.target.value)}
+          onChange={handleOnChangePrompt}
+          value = {prompt}
           rows="5"
           cols="30"
         />
